@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahesa Links</title>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.css"
-/>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     body {
       text-align: center;
+      padding: 1rem;
     }
 
     .header {
@@ -32,67 +29,62 @@
       object-fit: cover;
     }
 
-    .header hgroup{
-        gap: 1rem;
-    }
-
-    /* Boxed Links */
-    .link-button {
+    .btn-link {
       display: inline-block;
-      text-decoration: none;
       padding: 0.75rem 1.5rem;
+      margin: 0.5rem auto;
       border: 1px solid #ccc;
       border-radius: 20px;
-      transition: all 0.3s ease;
+      background: transparent;
       color: inherit;
-    }
-
-    .link-button:hover {
-        background-color: #f3f3f3;
-        color: #2d2d2d;
-        border-color: #5399f6;
-        transform: scale(1.2);
-    }
-
-    /* Social Icons Row */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .socials a {
-      font-size: 1.5rem;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .mail {
-        display: inline-block;
-        text-decoration: none;
-
-        padding: 0.5rem 1rem;
-        background-color: #f3f3f3;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-
-        text-decoration: none;
-        font-weight: normal;
-        color: #2d2d2d;
-
-        margin-top: 1rem; margin-bottom: 1rem;
-    }
-
-    .mail:hover {
+    .btn-link:hover {
+      background-color: #f3f3f3;
+      color: #2d2d2d;
       border-color: #5399f6;
       transform: scale(1.2);
     }
 
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .socials a {
+      font-size: 1.5rem;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    .mail {
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .btn-link {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .socials {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="container">
-    <!-- Profile Section -->
+    <!-- Profile -->
     <section class="header">
       <img src="./cat.jpg" alt="Profile Picture" />
       <hgroup>
@@ -103,40 +95,21 @@
 
     <!-- Main Links -->
     <section>
-      <a
-        href="https://blog.halomahesa.my.id"
-        target="_blank"
-        class="link-button"
-        >Mahesa's Blog</a
-      >
-      <a
-        href="https://blog.halomahesa.my.id"
-        target="_blank"
-        class="link-button"
-        >Curated Design</a
-      >
-      <a
-        href="https://blog.halomahesa.my.id"
-        target="_blank"
-        class="link-button"
-        >Tech Product</a
-      >
+      <a href="https://blog.halomahesa.my.id" target="_blank" class="btn-link">Mahesa's Blog</a>
+      <a href="https://blog.halomahesa.my.id" target="_blank" class="btn-link">Curated Design</a>
+      <a href="https://blog.halomahesa.my.id" target="_blank" class="btn-link">Tech Product</a>
     </section>
 
-    <!-- Social Media Icons -->
+    <!-- Social Media -->
     <section class="socials">
-        <a href="https://instagram.com/nomadwooork" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
-      </section> 
+      <a href="https://instagram.com/nomadwooork" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <a
-        href="mailto:mail@halomahesa.my.id"
-        target="_blank"
-        class="mail"
-        >Contact Me</a>
+    <footer class="mail">
+      <a href="mailto:mail@halomahesa.my.id" target="_blank" class="btn-link">Contact Me</a>
     </footer>
   </main>
 </body>
