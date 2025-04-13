@@ -6,10 +6,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+
   <style>
     body {
       text-align: center;
       padding: 1rem;
+    }
+
+    .name-highlight {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .profile-text {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .header {
@@ -18,13 +42,6 @@
       align-items: center;
       gap: 1rem;
       margin: 1rem 0;
-    }
-
-    .header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 100px;
-      object-fit: cover;
     }
 
     .header hgroup{
@@ -88,17 +105,65 @@
     #bio-text {
     transition: opacity 0.5s ease;
     }
+    
+    .profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .profile-image img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 100px;
+      object-fit: cover;
+    }
+
+    .profile-text h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .profile-text p {
+      margin: 0.5rem 0 0;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .profile-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .profile-text p {
+        font-size: 1rem;
+      }
+    }    
   </style>
 </head>
 <body>
   <main class="container">
     <!-- Profile -->
-    <section class="header">
-      <img src="./cat.jpg" alt="Profile Picture">
-      <hgroup>
-        <h1>Mahesa Tyo</h1>
-        <p><span id="bio-text">Minimalist—Graphic Designer</span></p>
-      </hgroup>
+    <section class="profile-container">
+      <div class="profile-image">
+        <img src="./cat.jpg" alt="Profile Picture">
+      </div>
+      <div class="profile-text">
+        <h1 class="name-highlight">
+          <div>Called</div>
+          <div>Mahesa Tyo</div>
+        </h1>        
+        <p><span id="bio-text">Graphic Designer</span></p>
+      </div>
     </section>
 
     <!-- Main Links -->
@@ -110,9 +175,9 @@
 
     <!-- Social Media -->
     <section class="socials">
-      <a href="https://instagram.com/nomadwooork" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://behance.net" target="_blank"><i class="fab fa-behance"></i></a>
+      <a href="https://www.instagram.com/designbymahesa/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/mahesatyo/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.behance.net/designbymahesa" target="_blank"><i class="fab fa-behance"></i></a>
     </section>
 
     <!-- Footer -->
@@ -123,8 +188,9 @@
 
   <script>
     const bioList = [
+      "Minimalist",
       "Nomaden",
-      "Game Education",
+      "Bachelor of Game Tech",
       "Freelancer",
       "Creative Director"
     ];
